@@ -1,6 +1,6 @@
 {
   "name": "pi-killword",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bind Ctrl+Backspace to Pi's backward word deletion action.",
   "type": "module",
   "scripts": {
