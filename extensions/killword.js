@@ -8,7 +8,7 @@ const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 async function offerRemoval(ctx) {
   if (!ctx.hasUI) return;
   const choice = await ctx.ui.select(
-    "Remove pi-killword?",
+    "Ctrl+Backspace was installed successfully, and pi-killword is no longer needed. Remove it?",
     ["Yes (recommended)", "No"],
   );
   if (choice !== "Yes (recommended)") return;
@@ -22,6 +22,6 @@ export default function killword(pi) {
     if (result.changed) {
       ctx.ui?.notify?.("Ctrl+Backspace added. Restart Pi or run /reload to apply it.", "info");
     }
-    setTimeout(() => void offerRemoval(ctx), 0);
+    await offerRemoval(ctx);
   });
 }
